@@ -8,34 +8,42 @@
     <title>Church Petty Cash Manager</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      // Prevents FOUC (Flash of Unstyled Content) for dark mode
+      if (
+        localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              'morandi-bg': '#F8F6F4',
-              'morandi-surface': '#FFFFFF',
-              'morandi-primary': {
-                DEFAULT: '#587180',
-                dark: '#405059',
-              },
-              'morandi-accent': {
-                DEFAULT: '#D4A991',
-                dark: '#C09882',
-              },
-              'morandi-success': {
-                light: '#E8EDEA',
-                DEFAULT: '#8A9B8E',
-                dark: '#6B7F71',
-              },
-              'morandi-warning': {
-                light: '#F5EBEB',
-                DEFAULT: '#B97A7A',
-                dark: '#9E6767',
-              },
-              'morandi-text': {
-                main: '#4A4A4A',
-                subtle: '#888888',
-              }
+              'morandi-bg': 'rgb(248 246 244)',
+              'morandi-surface': 'rgb(255 255 255)',
+              'morandi-primary': '#587180',
+              'morandi-primary-dark': '#405059',
+              'morandi-accent': '#D4A991',
+              'morandi-accent-dark': '#C09882',
+              'morandi-success': '#8A9B8E',
+              'morandi-success-dark': '#6B7F71',
+              'morandi-success-light': '#E8EDEA',
+              'morandi-warning': '#B97A7A',
+              'morandi-warning-dark': '#9E6767',
+              'morandi-warning-light': '#F5EBEB',
+              'morandi-text-main': '#4A4A4A',
+              'morandi-text-subtle': '#888888',
+              // Dark theme colors
+              'dark-bg': '#1a202c',
+              'dark-surface': '#2d3748',
+              'dark-text-main': '#E2E8F0',
+              'dark-text-subtle': '#A0AEC0',
             }
           }
         }
@@ -46,13 +54,14 @@
   "imports": {
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "framer-motion": "https://ga.jspm.io/npm:framer-motion@11.1.9/dist/framer-motion.mjs"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-morandi-bg">
+  <body class="bg-morandi-bg dark:bg-dark-bg transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

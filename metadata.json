@@ -1,0 +1,5 @@
+{
+  "name": "Church Petty Cash Manager",
+  "description": "An application to manage a church's petty cash, track transactions across different categories, and handle invoice reimbursements.",
+  "requestFramePermissions": []
+}

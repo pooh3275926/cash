@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Church Petty Cash Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'morandi-bg': '#F8F6F4',
+              'morandi-surface': '#FFFFFF',
+              'morandi-primary': {
+                DEFAULT: '#587180',
+                dark: '#405059',
+              },
+              'morandi-accent': {
+                DEFAULT: '#D4A991',
+                dark: '#C09882',
+              },
+              'morandi-success': {
+                light: '#E8EDEA',
+                DEFAULT: '#8A9B8E',
+                dark: '#6B7F71',
+              },
+              'morandi-warning': {
+                light: '#F5EBEB',
+                DEFAULT: '#B97A7A',
+                dark: '#9E6767',
+              },
+              'morandi-text': {
+                main: '#4A4A4A',
+                subtle: '#888888',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-morandi-bg">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

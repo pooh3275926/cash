@@ -511,7 +511,7 @@ export default function App() {
     }, [transactions, visibleCategoriesSet, searchQuery]);
 
     const calculations = useMemo(() => {
-        const visibleBalance = filteredTransactions.reduce((acc, t) => {
+        const visibleBalance = transactions.reduce((acc, t) => {
             let value = t.type === 'income' ? t.amount : -t.amount;
             if (t.category === Category.INVOICE_REIMBURSEMENT && t.type === 'expense' && t.reimbursed) {
                 value = 0;

@@ -667,7 +667,7 @@ export default function App() {
                             exit={{ opacity: 0, y: 10 }}
                             className="text-xl md:text-2xl font-bold absolute left-1/2 -translate-x-1/2 whitespace-nowrap"
                         >
-                            教會零用金管理
+                            
                         </motion.h1>
                     )}
                     </AnimatePresence>
